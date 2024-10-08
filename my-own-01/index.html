@@ -1,14 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Own</title>
-</head>
-<body>
-    <div id="menu">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Animated Navbar</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
 
-    </div>
-    <input type="checkbox" name="menu" id="">
+<body>
+    <input type="checkbox" id="sidebar-active" style="display: none;">
+
+    <nav class="top-menubar">
+        <a href="#" class="logo">LOGO</a>
+
+        <a href="#">Profile</a>
+        <!-- <label for="sidebar-active">Menu</label> -->
+        <label for="sidebar-active" class="open-sidebar-button">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
+        </label>
+
+    </nav>
+
+
+    <nav class="slide-menu">
+        <!-- <label for="sidebar-active">Close</label> -->
+        <label for="sidebar-active" class="close-sidebar-button">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
+        </label>
+
+        <a href="../index.html">Back to All Menus</a>
+        <a href="#">Profile</a>
+        <a href="#">Settings</a>
+    </nav>
+
+    <p>Home Page</p>
+
 </body>
 </html>

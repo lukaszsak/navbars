@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Sans+Mono:ital,wght@0,400..700;1,400..700&display=swap');
+
+:root {
+    --color-1: #0f1016;
+    --text-color: #f0f0f0;
+    --accent-color: #006aff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16pt;
+    font-family: Ubuntu Sans Mono, sans-serif;
+}
+
+
+/* Common Navbar Styling */
+
+.top-menubar label,
+.slide-menu label {
+    user-select: none;
+    cursor: pointer;
+}
+
+.top-menubar a:hover, 
+.top-menubar label:hover, 
+.slide-menu a:hover,
+.slide-menu label:hover {
+    background-color: var(--accent-color);
+}
+
+/* Top Menubar */
+
+.top-menubar {
+    height: 60px;
+    width: 100%;
+    
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    background-color: var(--color-1);
+    color: var(--text-color);
+}
+
+.top-menubar .logo {
+    margin-right: auto;
+}
+
+.top-menubar a , 
+.top-menubar label{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--text-color);
+    padding: 20px;
+}
+
+
+/* Slide Menu */
+
+.slide-menu {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top:0;
+    right: 0;    
+    overflow: hidden;  
+    background-color: var(--color-1);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    transform: translateX(100%);
+    transition: .4s ease-out;
+}
+
+.slide-menu a , 
+.slide-menu label{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    text-decoration: none;
+    color: var(--text-color);
+    padding: 20px;
+}
+
+#sidebar-active:checked ~ .slide-menu {
+    transform: translate(0);
+    transition: .4s ease-out;
+}
+
+svg {
+    fill: var(--text-color);
+}
