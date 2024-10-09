@@ -33,6 +33,22 @@ html {
     background-color: var(--accent-color);
 }
 
+#overlay {
+    /* background-color: blue; */
+    position: fixed;
+    top:0;
+    left:0;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    display: none;
+    
+}
+
+#sidebar-active:checked ~ #overlay {
+    display: block;
+}
+
 /* Top Menubar */
 
 .top-menubar {
@@ -67,15 +83,17 @@ html {
 .slide-menu {
     position: fixed;
     height: 100%;
-    width: 100%;
+    width: min(100%, 720px);
     top:0;
-    right: 0;    
+    /* left: max(0px, 50% - 360px); */
+    right:0;
     overflow: hidden;  
     background-color: var(--color-1);
 
     display: flex;
     flex-direction: column;
     align-items: center;
+    z-index: 10;
 
     transform: translateX(100%);
     transition: .4s ease-out;

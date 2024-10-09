@@ -3,29 +3,31 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Animated Navbar</title>
+        <title>Slide Menu</title>
         <link rel="stylesheet" href="style.css">
     </head>
 
 <body>
     <input type="checkbox" id="sidebar-active" style="display: none;">
 
-    <nav class="top-menubar">
-        <a href="#" class="logo">LOGO</a>
+    <label for="sidebar-active" id="overlay"></label>
 
-        <a href="#">Profile</a>
-        <!-- <label for="sidebar-active">Menu</label> -->
+    <nav class="top-menubar">
         <label for="sidebar-active" class="open-sidebar-button">
             <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
         </label>
+
+        <a href="#" class="logo">LOGO</a>
+
+        <a href="#">Profile</a>
 
     </nav>
 
 
     <nav class="slide-menu">
-        <!-- <label for="sidebar-active">Close</label> -->
-        <label for="sidebar-active" class="close-sidebar-button">
+        <label for="sidebar-active" class="close-sidebar-button slide-menu-header">
             <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
+            <a>Back</a>
         </label>
 
         <a href="../index.html">Back to All Menus</a>
@@ -33,7 +35,20 @@
         <a href="#">Settings</a>
     </nav>
 
-    <p>Home Page</p>
+
+    <div class="main-container">
+        <p>Home Page</p>
+
+        <p>This is an example of an left side slide menu.</p>
+        <p>Hamburger menu on the left side opens the menu, which slides in from the left side.</p>
+        <p>Menu is closed either by pressing upper Close Menu header or clicking outside the menu on an light transparent
+            overlay layer.
+        </p>
+
+
+
+    </div>
+
 
 </body>
 </html>

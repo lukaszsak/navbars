@@ -4,6 +4,11 @@
     --color-1: #0f1016;
     --text-color: #f0f0f0;
     --accent-color: #006aff;
+    
+    --bg-slide-menu: #444444;
+    --bg-slide-menu-top: #222222;
+
+    --slide-menu-width: 20rem;
 }
 
 * {
@@ -46,6 +51,7 @@ html {
 }
 
 #sidebar-active:checked ~ #overlay {
+    background-color: rgba(9,9,9,0.3);
     display: block;
 }
 
@@ -67,6 +73,11 @@ html {
     margin-right: auto;
 }
 
+.open-sidebar-button,
+.sidebar-menu-opener {
+    margin-right: auto;
+}
+
 .top-menubar a , 
 .top-menubar label{
     height: 100%;
@@ -83,20 +94,29 @@ html {
 .slide-menu {
     position: fixed;
     height: 100%;
-    width: min(100%, 720px);
+    /* width: min(100%, 720px); */
+    width: min(100%, var(--slide-menu-width));
     top:0;
     /* left: max(0px, 50% - 360px); */
-    right:0;
+    left:0;
     overflow: hidden;  
-    background-color: var(--color-1);
+    /* background-color: var(--color-1); */
+    background-color: var(--bg-slide-menu);
 
     display: flex;
     flex-direction: column;
     align-items: center;
     z-index: 10;
 
-    transform: translateX(100%);
+    transform: translateX(-100%);
     transition: .4s ease-out;
+}
+
+.slide-menu-header {
+    /* background-color: var(--bg-slide-menu-top); */
+    background-color: var(--color-1);
+    height: 60px;
+    /* justify-content: center; */
 }
 
 .slide-menu a , 
@@ -104,10 +124,12 @@ html {
     width: 100%;
     display: flex;
     justify-content: center;
+    align-items: center;
 
     text-decoration: none;
     color: var(--text-color);
-    padding: 20px;
+    padding: 30px;
+    overflow: hidden;
 }
 
 #sidebar-active:checked ~ .slide-menu {
@@ -118,6 +140,8 @@ html {
 svg {
     fill: var(--text-color);
 }
+
+
 
 /* MAIN CONTAINER */
 
@@ -132,38 +156,4 @@ svg {
 p {
     margin: .5 rem;
     margin-bottom: 1rem;
-}
-
-.menu-list {
-    /* margin: auto; */
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    /* flex-direction: row; */
-    gap: .2rem;
-    
-    justify-content: end;
-    justify-content: center;
-
-    align-items: flex-start;
-    align-items: center;
-    align-items: flex-end;
-}
-
-.menu-list a {
-    width: 100%;
-    display: flex;
-    background-color: var(--color-1);
-    color: var(--text-color);
-
-    justify-content: center;
-
-    text-decoration: none;
-    overflow: hidden;
-    border-radius: .5rem;
-    padding: .2rem 1rem;
-}
-
-.menu-list a:hover {
-    background-color: var(--accent-color);
 }
